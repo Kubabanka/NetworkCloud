@@ -23,21 +23,21 @@ namespace NetworkCloud
 
         private void toolStripMenuItemIncrease_Click(object sender, EventArgs e)
         {
-            cloudConsoleTextbox.Font = new Font(cloudConsoleTextbox.Font.FontFamily, cloudConsoleTextbox.Font.Size + 1f);
+            consoleRichTextBox.Font = new Font(consoleRichTextBox.Font.FontFamily, consoleRichTextBox.Font.Size + 1f);
         }
 
         private void toolStripMenuItemDecrease_Click(object sender, EventArgs e)
         {
-            float newSize = cloudConsoleTextbox.Font.Size - 1f;
+            float newSize = consoleRichTextBox.Font.Size - 1f;
             if (newSize > 8)
             {
-                cloudConsoleTextbox.Font = new Font(cloudConsoleTextbox.Font.FontFamily, newSize);
+                consoleRichTextBox.Font = new Font(consoleRichTextBox.Font.FontFamily, newSize);
             }
         }
 
         private void toolStripMenuItemClearAll_Click(object sender, EventArgs e)
         {
-            cloudConsoleTextbox.Text = string.Empty;
+            consoleRichTextBox.Text = string.Empty;
         }
 
         private void Form1_Load(object sender, EventArgs e)

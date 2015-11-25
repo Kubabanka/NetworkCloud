@@ -38,24 +38,18 @@
             this.cloudGroupBox = new System.Windows.Forms.GroupBox();
             this.cloudTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.cloudConsoleTextbox = new System.Windows.Forms.TextBox();
             this.cloudConsoleContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemIncrease = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDecrease = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.consoleRichTextBox = new System.Windows.Forms.RichTextBox();
             this.configGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portNumericUpDown)).BeginInit();
             this.cloudGroupBox.SuspendLayout();
             this.cloudTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.cloudConsoleContextMenuStrip.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // configGroupBox
@@ -123,6 +117,7 @@
             // 
             // cloudGroupBox
             // 
+            this.cloudGroupBox.ContextMenuStrip = this.cloudConsoleContextMenuStrip;
             this.cloudGroupBox.Controls.Add(this.cloudTabControl);
             this.cloudGroupBox.Location = new System.Drawing.Point(8, 78);
             this.cloudGroupBox.Name = "cloudGroupBox";
@@ -135,7 +130,6 @@
             // 
             this.cloudTabControl.Controls.Add(this.tabPage1);
             this.cloudTabControl.Controls.Add(this.tabPage2);
-            this.cloudTabControl.Controls.Add(this.tabPage3);
             this.cloudTabControl.Location = new System.Drawing.Point(7, 19);
             this.cloudTabControl.Name = "cloudTabControl";
             this.cloudTabControl.SelectedIndex = 0;
@@ -144,7 +138,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.cloudConsoleTextbox);
+            this.tabPage1.Controls.Add(this.consoleRichTextBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -152,17 +146,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Console";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // cloudConsoleTextbox
-            // 
-            this.cloudConsoleTextbox.ContextMenuStrip = this.cloudConsoleContextMenuStrip;
-            this.cloudConsoleTextbox.Location = new System.Drawing.Point(7, 4);
-            this.cloudConsoleTextbox.Multiline = true;
-            this.cloudConsoleTextbox.Name = "cloudConsoleTextbox";
-            this.cloudConsoleTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cloudConsoleTextbox.Size = new System.Drawing.Size(954, 386);
-            this.cloudConsoleTextbox.TabIndex = 0;
-            this.cloudConsoleTextbox.TextChanged += new System.EventHandler(this.cloudConsoleTextbox_TextChanged);
             // 
             // cloudConsoleContextMenuStrip
             // 
@@ -196,7 +179,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.checkedListBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(967, 396);
@@ -204,40 +186,14 @@
             this.tabPage2.Text = "Links";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // checkedListBox1
+            // consoleRichTextBox
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "r",
-            "ewr",
-            "ew",
-            "r",
-            "ewr",
-            "ew",
-            "rr"});
-            this.checkedListBox1.Location = new System.Drawing.Point(158, 23);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.pictureBox1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(967, 396);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Example 1";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(139, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.consoleRichTextBox.ContextMenuStrip = this.cloudConsoleContextMenuStrip;
+            this.consoleRichTextBox.Location = new System.Drawing.Point(7, 7);
+            this.consoleRichTextBox.Name = "consoleRichTextBox";
+            this.consoleRichTextBox.Size = new System.Drawing.Size(954, 383);
+            this.consoleRichTextBox.TabIndex = 0;
+            this.consoleRichTextBox.Text = "";
             // 
             // Form1
             // 
@@ -255,11 +211,7 @@
             this.cloudGroupBox.ResumeLayout(false);
             this.cloudTabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.cloudConsoleContextMenuStrip.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,14 +229,11 @@
         private System.Windows.Forms.TabControl cloudTabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox cloudConsoleTextbox;
         private System.Windows.Forms.ContextMenuStrip cloudConsoleContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemIncrease;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemDecrease;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClearAll;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox consoleRichTextBox;
     }
 }
 
