@@ -36,20 +36,20 @@
             this.configPathTextBox = new System.Windows.Forms.TextBox();
             this.configOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.cloudGroupBox = new System.Windows.Forms.GroupBox();
-            this.cloudTabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cloudConsoleContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemIncrease = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDecrease = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemClearAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cloudTabControl = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.consoleRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.configGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portNumericUpDown)).BeginInit();
             this.cloudGroupBox.SuspendLayout();
+            this.cloudConsoleContextMenuStrip.SuspendLayout();
             this.cloudTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.cloudConsoleContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // configGroupBox
@@ -61,7 +61,7 @@
             this.configGroupBox.Controls.Add(this.configPathTextBox);
             this.configGroupBox.Location = new System.Drawing.Point(8, 12);
             this.configGroupBox.Name = "configGroupBox";
-            this.configGroupBox.Size = new System.Drawing.Size(988, 60);
+            this.configGroupBox.Size = new System.Drawing.Size(988, 89);
             this.configGroupBox.TabIndex = 0;
             this.configGroupBox.TabStop = false;
             this.configGroupBox.Text = "Configuration";
@@ -126,27 +126,6 @@
             this.cloudGroupBox.TabStop = false;
             this.cloudGroupBox.Text = "Cloud";
             // 
-            // cloudTabControl
-            // 
-            this.cloudTabControl.Controls.Add(this.tabPage1);
-            this.cloudTabControl.Controls.Add(this.tabPage2);
-            this.cloudTabControl.Location = new System.Drawing.Point(7, 19);
-            this.cloudTabControl.Name = "cloudTabControl";
-            this.cloudTabControl.SelectedIndex = 0;
-            this.cloudTabControl.Size = new System.Drawing.Size(975, 422);
-            this.cloudTabControl.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.consoleRichTextBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(967, 396);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Console";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // cloudConsoleContextMenuStrip
             // 
             this.cloudConsoleContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -177,6 +156,37 @@
             this.toolStripMenuItemClearAll.Size = new System.Drawing.Size(192, 22);
             this.toolStripMenuItemClearAll.Text = "Clear All";
             // 
+            // cloudTabControl
+            // 
+            this.cloudTabControl.Controls.Add(this.tabPage1);
+            this.cloudTabControl.Controls.Add(this.tabPage2);
+            this.cloudTabControl.Location = new System.Drawing.Point(7, 19);
+            this.cloudTabControl.Name = "cloudTabControl";
+            this.cloudTabControl.SelectedIndex = 0;
+            this.cloudTabControl.Size = new System.Drawing.Size(975, 422);
+            this.cloudTabControl.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.consoleRichTextBox);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(967, 396);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Console";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // consoleRichTextBox
+            // 
+            this.consoleRichTextBox.AutoWordSelection = true;
+            this.consoleRichTextBox.ContextMenuStrip = this.cloudConsoleContextMenuStrip;
+            this.consoleRichTextBox.Location = new System.Drawing.Point(7, 7);
+            this.consoleRichTextBox.Name = "consoleRichTextBox";
+            this.consoleRichTextBox.Size = new System.Drawing.Size(954, 383);
+            this.consoleRichTextBox.TabIndex = 0;
+            this.consoleRichTextBox.Text = "";
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -185,15 +195,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Links";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // consoleRichTextBox
-            // 
-            this.consoleRichTextBox.ContextMenuStrip = this.cloudConsoleContextMenuStrip;
-            this.consoleRichTextBox.Location = new System.Drawing.Point(7, 7);
-            this.consoleRichTextBox.Name = "consoleRichTextBox";
-            this.consoleRichTextBox.Size = new System.Drawing.Size(954, 383);
-            this.consoleRichTextBox.TabIndex = 0;
-            this.consoleRichTextBox.Text = "";
             // 
             // Form1
             // 
@@ -209,9 +210,9 @@
             this.configGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.portNumericUpDown)).EndInit();
             this.cloudGroupBox.ResumeLayout(false);
+            this.cloudConsoleContextMenuStrip.ResumeLayout(false);
             this.cloudTabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.cloudConsoleContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

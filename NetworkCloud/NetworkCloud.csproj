@@ -80,6 +80,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TSST.Cloud\TSST.Cloud.csproj">
+      <Project>{c0020386-65c3-4a39-b178-1c539f15af5b}</Project>
+      <Name>TSST.Cloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TSST.Configuration\TSST.Configuration.csproj">
+      <Project>{2b57b538-b439-4028-9252-7114a557bab9}</Project>
+      <Name>TSST.Configuration</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

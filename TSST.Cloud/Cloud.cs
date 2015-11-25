@@ -19,6 +19,7 @@ namespace TSST.Cloud
         private const char _outputType = 'O';
 
         private event EventHandler<RequestEventArgs> requestReceived;
+        public event EventHandler<LinkUsageEventArgs> LinkUsed;
 
         private List<LinkConfig> linkList;
 
@@ -52,6 +53,8 @@ namespace TSST.Cloud
         {
             string id = e.Id;
             string data = e.Data;
+            bool succeeded = false;
+            string receiverId=string.Empty;
             try
             {
                 var link = linkList
@@ -59,16 +62,23 @@ namespace TSST.Cloud
                     .FirstOrDefault();
                 if (link != null)
                 {
-                    string receiverId = string.Format("I#{0}:{1}", link.DestinationID, link.DestinationPort);
+                    receiverId = string.Format("I#{0}:{1}", link.DestinationID, link.DestinationPort);
                     var receiverClient = GetFromDictionary(receiverId);
                     if (receiverClient != null && receiverId.Length > 3)
                     {
                         var writer = new BinaryWriter(receiverClient.GetStream());
                         writer.Write(data);
+                        succeeded = true;
                     }
                 }
             }
             catch { }
+            if (!string.IsNullOrEmpty(receiverId))
+            {
+                var eventHandler = LinkUsed;
+                if (eventHandler != null)
+                    eventHandler(this, new LinkUsageEventArgs(id, receiverId, succeeded));
+            }
         }
 
         private void HandleClientRequest(object obj)
